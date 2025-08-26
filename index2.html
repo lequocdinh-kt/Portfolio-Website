@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo Display CSS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.5;
+    }
+
+    .demo-section {
+      margin-bottom: 40px;
+    }
+
+    .box {
+      background: steelblue;
+      color: #fff;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 6px;
+    }
+
+    .block .box {
+      display: block;
+      width: 150px;
+    }
+
+    .inline .box {
+      display: inline;
+      width: 150px; /* không có tác dụng vì inline bỏ qua width/height */
+    }
+
+    .inline-block .box {
+      display: inline-block;
+      width: 150px;
+      height: 60px;
+    }
+
+    .flex {
+      display: flex;
+      gap: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .none .box:nth-child(2) {
+      display: none; /* ẩn phần tử */
+    }
+
+    .wrapper {
+      border: 2px dashed #aaa;
+      padding: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Demo các giá trị của display</h1>
+
+  <!-- block -->
+  <div class="demo-section block">
+    <h2>1. display: block</h2>
+    <div class="wrapper">
+      <div class="box">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+    </div>
+    <p>Mỗi phần tử <b>block</b> chiếm toàn bộ chiều ngang, tự động xuống dòng.</p>
+  </div>
+
+  <!-- inline -->
+  <div class="demo-section inline">
+    <h2>2. display: inline</h2>
+    <div class="wrapper">
+      <div class="box">Inline 1</div>
+      <div class="box">Inline 2</div>
+      <div class="box">Inline 3</div>
+    </div>
+    <p>Các phần tử <b>inline</b> nằm cùng dòng, không áp dụng width/height.</p>
+  </div>
+
+  <!-- inline-block -->
+  <div class="demo-section inline-block">
+    <h2>3. display: inline-block</h2>
+    <div class="wrapper">
+      <div class="box">Inline-block 1</div>
+      <div class="box">Inline-block 2</div>
+      <div class="box">Inline-block 3</div>
+    </div>
+    <p><b>inline-block</b> nằm cùng dòng nhưng vẫn áp dụng width/height.</p>
+  </div>
+
+  <!-- flex -->
+  <div class="demo-section">
+    <h2>4. display: flex</h2>
+    <div class="wrapper flex">
+      <div class="box">Flex 1</div>
+      <div class="box">Flex 2</div>
+      <div class="box">Flex 3</div>
+    </div>
+    <p><b>flex</b> giúp sắp xếp phần tử con theo trục ngang/dọc dễ dàng, có thể căn chỉnh linh hoạt.</p>
+  </div>
+
+  <!-- grid -->
+  <div class="demo-section">
+    <h2>5. display: grid</h2>
+    <div class="wrapper grid">
+      <div class="box">Grid 1</div>
+      <div class="box">Grid 2</div>
+      <div class="box">Grid 3</div>
+      <div class="box">Grid 4</div>
+      <div class="box">Grid 5</div>
+      <div class="box">Grid 6</div>
+    </div>
+    <p><b>grid</b> chia layout thành các ô (cột, hàng) rất mạnh mẽ.</p>
+  </div>
+
+  <!-- none -->
+  <div class="demo-section none">
+    <h2>6. display: none</h2>
+    <div class="wrapper">
+      <div class="box">Hiện</div>
+      <div class="box">Ẩn (none)</div>
+      <div class="box">Hiện</div>
+    </div>
+    <p>Phần tử có <b>display: none</b> sẽ biến mất hoàn toàn khỏi bố cục.</p>
+  </div>
+
+</body>
+</html>
